@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java codes</title>
+    <style>
+        .container 
+    {
+    max-width: 1000px;
+    height: 8000px;
+    margin-left: 4cm;
+    background-color:hsl(55, 8%, 72%);
+    padding: 50px;
+    border-radius: 16px;
+    overflow: hidden;
+    }
+    .container2
+    {
+        max-width:1500px;
+        height: 5000px;
+        margin: 0 auto;
+        background-position: center;
+        position:absolute;
+    }
+
+    </style>
+</head>
+<body style="background-color:#E5E3D7;margin: 50px;" >
+
+    <div class="container2">
+
+        <img src="c1.jpg" style="border-radius: 50%; width: 200px; height: 200px; display: block; display: inline-block;" >
+         <div style="display: inline-block; vertical-align: top; margin-left: 125px;">
+            <h1 style="font-size:4em">Welcome to CreDiTecTo</h1>
+            <p>Enhancing the Fact that Wisdom speaks louder than Knowledge.</p>
+            <h1 style="color: brown;margin-left: 3cm;margin-top: 2cm;">HTML and JAVA SCRIPT</h1>
+        </div>
+
+
+    <div class="container">
+        <h1>To find the lenght of inputed string:</h1>
+        <img src="L1.png">
+        <h1>Try yourself</h1>
+        <label>Enter String:</label>
+<input type="text" id="text"><br>
+<label>result:</label>
+<input type="text" id="result" readonly><br>
+<button onclick="Length()">Calculate Length</button>
+<button onclick="upper()">Uppercase</button>
+
+        <h1>To find square and square root of a number</h1>
+        <img src="L2.png">
+        <h1>Try yourself</h1>
+        <label>Enter A number:</label>
+<input type="number" id="number"><br>
+<label>result:</label>
+<input type="number" id="result1" readonly><br>
+<button onclick="Square()">for Square</button>
+<button onclick="root()">For root Square</button>
+
+        <h1>Email varification</h1>
+        <img src="L5.png">
+        <h1>Try yourself</h1>
+<form onsubmit="return validate()">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br>
+
+    <label for="password">Password:</label>
+    <input type="text" id="password" name="password"><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+        <h1>To change color of text if button is clicked </h1>
+        <img src="L6.png">
+        <h1>Try yourself</h1>
+        <p id="Biren">Hello "CreDiTecTo".</p>
+        <button type="button" onclick="red_color()">RED_Color</button>
+        <button type="button" onclick="yellow_color()">YELLOW_Color</button>
+        <button type="button" onclick="green_color()">GREEN_Color</button>
+        <button type="button" onclick="blue_color()">BLUE_Color</button>
+
+
+        <h1>To Store and retrive data from localStorage </h1>
+        <img src="L3.png">
+        <h1>Try yourself</h1>
+        <form>
+            <label for="email">Email:</label>
+            <input type="email" id="email1" name="email"><br>
+        
+            <label for="password">Password:</label>
+            <input type="text" id="password1" name="password"><br>
+            <button type="button" onclick="store()">Store the data</button><br>
+            <button type="button" onclick="retrive()">retrive the data</button>
+        </form>
+
+
+        <button style="margin-top: 3cm;width: 200px; height: 60px;font-size: 20px;padding: 10px 20px" type="button" onclick="main()">Go to main page</button>
+    </div>
+</div>
+<script>
+function validate() 
+{
+    var  Email= document.getElementById('email').value;
+    var pass = document.getElementById('password').value;
+
+  if(Email =="" && pass=="")
+    {
+        alert("Email and password cannot be blank");
+        return false;
+    }
+    
+    if(Email!=="" && pass=="")
+    {
+        alert("password cannot be blank");
+        return false;
+    }
+    if(Email =="" && pass !=="")
+    {
+        alert("Email cannot be blank");
+        return false;
+    }
+    
+    if( Email !=="" && pass !=="")
+    {
+        var l=pass.length;
+        if(l<8)
+        {
+            alert("password cannot be less than 8 character");
+        return false;
+        }
+        else
+        alert("LOGIN sucessfull");
+        return true;
+    }
+
+
+ }
+ function red_color()
+     {
+        var text= document.getElementById('Biren');
+        text.style.color="red";
+    }
+    function yellow_color()
+     {
+        var text= document.getElementById('Biren');
+        text.style.color="yellow";
+    }
+    function green_color()
+     {
+        var text= document.getElementById('Biren');
+        text.style.color="green";
+    }
+    function blue_color()
+     {
+        var text= document.getElementById('Biren');
+        text.style.color="blue";
+    }
+    function Square() {
+        var a= document.getElementById('number');
+        var b= document.getElementById('result1');
+
+        var  x= a.value;
+
+        var sqr =x*x;
+
+        b.value = sqr;
+    }
+
+    function root() {
+        var a= document.getElementById('number');
+        var b= document.getElementById('result1');
+
+        var x= a.value;
+
+        var root =Math.sqrt(x);
+
+        b.value =root;
+    }
+    function Length() {
+        var a= document.getElementById('text');
+        var b= document.getElementById('result');
+
+        var  x= a.value;
+
+        var stringLength =x.length;
+
+        b.value = stringLength;
+    }
+
+    function upper() {
+        var a= document.getElementById('text');
+        var b= document.getElementById('result');
+
+        var x = a.value;
+
+        var upper = x.toUpperCase();
+
+        b.value = upper;
+    }
+    function store()
+{
+            var  id=document.getElementById('email1').value;
+            var pass= document.getElementById('password1').value;
+          
+            
+            if( id !=="" && pass !=="")
+            {
+                localStorage.setItem('id',id);
+                localStorage.setItem('pass',pass);
+                alert("Email and password saved");
+            }
+            else
+            {
+                alert("Email and password cannot be saved");
+            }
+}
+function retrive()
+{
+            var  id= localStorage.getItem('id');
+            var pass = localStorage.getItem('pass');
+            if( id !=="" && pass !=="")
+            {
+                alert(`id=${id} & password=${pass}`);
+            }
+            else
+            {
+                alert("no stored data found");
+            }
+
+}
+function main(){
+        window.location.href ='home.html';
+    }
+</script>
+</body>
+</html>

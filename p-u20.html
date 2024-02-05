@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container 
+    {
+    max-width:2000px;
+    height: 1500px;
+    margin-left: 4cm;
+    background-color:hsl(55, 8%, 72%);
+    padding: 50px;
+    border-radius: 16px;
+    overflow: hidden;
+    }
+    .container2
+    {
+        width:1300px;
+        height: 1500px;
+        margin: 0 auto;
+        background-position: center;
+        position:absolute;
+    }
+    button{
+        width: 200px;
+        height: 60px;
+        font-size: 20px;
+        padding: 10px 20px
+    }
+    </style>
+</head>
+<body style="background-color:#E5E3D7;margin: 50px;height: 2000px;" >
+
+<div class="container2">
+    
+            <img src="c1.jpg" style="border-radius: 50%; width: 200px; height: 200px; display: block; display: inline-block;" >
+             <div style="display: inline-block; vertical-align: top; margin-left: 125px;">
+                <h1 style="font-size:4em">Welcome to CreDiTecTo</h1>
+                <p>Enhancing the Fact that Wisdom speaks louder than Knowledge.</p>
+                 <h1 style="color: brown;margin-left: 3cm;margin-top: 2cm;">Electron</h1>
+            </div>
+    
+    
+        <div class="container">
+            <embed src="p-u20.pdf" type="application/pdf" width="100%" height="1300px" />
+
+            <button style="margin-top: 3cm;" type="button" onclick="main()">Go to previous page</button>
+
+        </div>
+</div>
+    <script>
+        function main(){
+            window.location.href ='home.html';
+        }
+    </script>
+</body>
+</html>
